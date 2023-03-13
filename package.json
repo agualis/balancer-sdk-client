@@ -6,14 +6,18 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "local-sor": "rimraf ./node_modules/@balancer-labs && npm i -D ../balancer-sor/",
+    "build-local": "cd ../balancer-sor && yarn build && cd ../balancer-sdk-client && npm run local-sor && npm run build"
   },
   "dependencies": {
     "vue": "^3.2.45"
   },
   "devDependencies": {
-    "@balancer-labs/sdk": "^1.0.0",
+    "@balancer-labs/sor": "file:../balancer-sor",
     "@vitejs/plugin-vue": "^4.0.0",
+    "bignumber.js": "^9.1.1",
+    "rimraf": "^4.3.1",
     "rollup-plugin-visualizer": "^5.9.0",
     "typescript": "^4.9.3",
     "vite": "^4.1.0",
