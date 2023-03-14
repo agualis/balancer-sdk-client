@@ -7,14 +7,15 @@
     "dev": "vite",
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
-    "local-sor": "rimraf ./node_modules/@balancer-labs && npm i -D ../balancer-sor/",
-    "build-local": "cd ../balancer-sor && yarn build && cd ../balancer-sdk-client && npm run local-sor && npm run build"
+    "local-sdk": "rimraf ./node_modules/@balancer-labs && npm i -D ../balancer-sdk/balancer-js",
+    "build-local": "cd ../balancer-sdk/balancer-js && yarn build && cd ../../balancer-sdk-client && npm run local-sdk && npm run build"
   },
   "dependencies": {
     "vue": "^3.2.45"
   },
   "devDependencies": {
-    "@balancer-labs/sor": "file:../balancer-sor",
+    "@balancer-labs/sdk": "file:../balancer-sdk/balancer-js",
+    "@balancer-labs/sor": "file:../balancer-sdk",
     "@vitejs/plugin-vue": "^4.0.0",
     "bignumber.js": "^9.1.1",
     "rimraf": "^4.3.1",
